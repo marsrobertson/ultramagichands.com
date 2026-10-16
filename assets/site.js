@@ -37,6 +37,8 @@
       collage.appendChild(fig);
     });
     collage.hidden = false;
+    var quotes = document.getElementById('quotes');
+    if (quotes) quotes.hidden = true;
   }
 
   // Lightbox.

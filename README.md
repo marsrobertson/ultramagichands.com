@@ -1,6 +1,6 @@
 # ultramagichands.com
 
-Single-page site for Ultra Magic Hands, a mobile massage service in Playa San Juan, Tenerife. Plain HTML/CSS/JS, no build step.
+Single-page site for Ultra Magic Hands, massage by Mars in London. Plain HTML/CSS/JS, no build step.
 
 ```
 index.html            the page
@@ -32,7 +32,8 @@ This writes:
 ## Editing
 
 - WhatsApp number: search `447586294279` in `index.html`.
-- Prices and treatment copy: `index.html`, sections `#prices` and `#treatments`.
+- Price and treatment copy: `index.html`, sections `#prices` and `#experience`.
+- Text testimonials in `#reviews` are shown until review screenshots are added, then hidden automatically.
 - Colours: the variables at the top of `assets/style.css`.
 
 ## Hosting (GitHub Pages)

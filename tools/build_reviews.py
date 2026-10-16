@@ -31,11 +31,11 @@ EXTS = {".png", ".jpg", ".jpeg", ".webp"}
 WEB_MAX_W = 900
 
 # Palette matches assets/style.css
-SAND = (247, 239, 228)
-INK = (15, 42, 46)
-INK_SOFT = (61, 85, 89)
-SUN = (242, 166, 90)
-CORAL = (232, 119, 90)
+SAND = (244, 239, 250)
+INK = (27, 18, 56)
+INK_SOFT = (79, 72, 104)
+SUN = (245, 185, 79)
+CORAL = (138, 79, 216)
 
 W = 1080
 PAD = 54
@@ -79,7 +79,7 @@ def paste_card(canvas, im, x, y):
     """Paste with rounded corners and a soft shadow."""
     im, mask = rounded(im, RADIUS)
     shadow = Image.new("RGBA", (im.width + 60, im.height + 60), (0, 0, 0, 0))
-    ImageDraw.Draw(shadow).rounded_rectangle((30, 36, 30 + im.width, 36 + im.height), RADIUS, fill=(15, 42, 46, 46))
+    ImageDraw.Draw(shadow).rounded_rectangle((30, 36, 30 + im.width, 36 + im.height), RADIUS, fill=(27, 18, 56, 46))
     shadow = shadow.filter(ImageFilter.GaussianBlur(14))
     canvas.alpha_composite(shadow, (x - 30, y - 30))
     card = im.convert("RGBA")
@@ -119,7 +119,7 @@ def header(canvas, rating, count):
 def footer(canvas):
     d = ImageDraw.Draw(canvas)
     f = font("fraunces-latin-400-italic.woff", 30)
-    text = "ultramagichands.com · Playa San Juan, Tenerife"
+    text = "ultramagichands.com · Massage by Mars · London"
     tw = d.textlength(text, font=f)
     d.text(((W - tw) / 2, canvas.height - PAD - 30), text, font=f, fill=INK_SOFT)
 
