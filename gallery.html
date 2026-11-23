@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photo gallery · Ultra Magic Hands</title>
+<meta name="description" content="Photos from Mars and Ultra Magic Hands.">
+<meta name="theme-color" content="#fffdf5">
+<link rel="icon" href="assets/favicon.svg?v=3" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=10">
+</head>
+<body class="project-page gallery-page">
+<header class="nav">
+  <a class="brand" href="index.html" aria-label="Ultra Magic Hands home">
+    <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1"><path d="M2 2H30V30H2Z M8 8H24V24H8Z M16 2 30 16 16 30 2 16Z"/><path d="M16 8 24 16 16 24 8 16Z"/></g></svg>
+    <span>Ultra Magic Hands</span>
+  </a>
+  <nav class="nav-links" aria-label="Sections">
+    <a href="gallery.html" aria-current="page">Gallery</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="index.html#prices">Price</a>
+    <a href="index.html#reviews">Reviews</a>
+    <a href="index.html#where">Where</a>
+    <a href="index.html#projects">Other work</a>
+  </nav>
+  <a class="btn btn-small js-wa" href="https://wa.me/447586294279" data-msg="Hi Mars! I'd like to book a massage.">Book</a>
+</header>
+<main id="top">
+  <section class="gallery-heading">
+    <p class="eyebrow">Ultra Magic Hands · Through my lens</p>
+    <h1>My photo gallery.</h1>
+    <a href="index.html">← Back to massage</a>
+  </section>
+  <section class="photo-section" aria-label="Photo collection">
+    <div id="photo-grid" class="photo-grid"></div>
+    <p id="gallery-empty" class="gallery-empty">Photos are on their way.</p>
+    <noscript><p>Enable JavaScript to browse the photo gallery.</p></noscript>
+  </section>
+</main>
+<dialog id="photo-viewer" class="photo-viewer" aria-label="Full-size photo gallery">
+  <div class="photo-viewer-toolbar"><span id="photo-counter" aria-live="polite"></span><button type="button" id="photo-close" aria-label="Close photo">Close ×</button></div>
+  <div class="photo-viewer-stage"><button type="button" id="photo-previous" aria-label="Previous photo">←</button><figure><img id="photo-full" alt=""><figcaption id="photo-caption"></figcaption></figure><button type="button" id="photo-next" aria-label="Next photo">→</button></div>
+</dialog>
+<footer class="footer">
+  <div>
+    <p class="brand-foot">Ultra Magic Hands</p>
+    <p>Massage by Mars · London</p>
+  </div>
+  <div class="foot-links">
+    <a href="tel:+447586294279">Call +44 7586 294279</a>
+    <a href="https://wa.me/447586294279" class="js-wa" data-msg="Hi Mars!">WhatsApp</a>
+    <a href="https://www.instagram.com/ultramagichands/" target="_blank" rel="noopener">Instagram @UltraMagicHands</a>
+  </div>
+</footer>
+<script src="gallery/photos.js"></script>
+<script src="assets/gallery.js"></script>
+<script src="assets/site.js?v=5"></script>
+</body>
+</html>

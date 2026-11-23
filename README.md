@@ -1,11 +1,14 @@
 # ultramagichands.com
 
-Single-page site for Ultra Magic Hands, massage by Mars in London. Plain HTML/CSS/JS, no build step.
+Static site for Ultra Magic Hands, massage by Mars in London. Plain HTML/CSS/JS, no build step.
 
 ```
-index.html            the page
+index.html            massage homepage
+gardening-affairs.html Ministry of Gardening Affairs
+dating-relating.html   Dating & relating
+advisory.html          Advisory, consultancy & counselling
 assets/style.css      styles
-assets/site.js        WhatsApp links, nav, review collage, lightbox
+assets/site.js        WhatsApp links, nav, animated review wall
 reviews/raw/          drop Google Maps review screenshots here
 reviews/reviews.js    generated list of review images (the page reads this)
 tools/build_reviews.py  screenshots -> web images + collages
@@ -41,3 +44,45 @@ This writes:
 1. Repo Settings → Pages → Deploy from branch → `main` / root.
 2. `CNAME` already contains `www.ultramagichands.com`.
 3. At your domain registrar, point `www` (CNAME) to `marsrobertson.github.io`, and add the four GitHub Pages A records for the bare domain. Then remove the Google Sites custom-domain mapping.
+
+## Existing review screenshot collection
+
+The wall uses original screenshots in `reviews/png/` and reviewer metadata in
+`reviews/reviews.csv`. Run `python3 tools/index_reviews.py` after updating them.
+
+Natural-height reviews pack into tight columns with a dedicated full-height
+newsletter placeholder column. The river moves left and pauses on hover or
+keyboard focus. Drag or swipe to move it in either direction. Offscreen columns
+reshuffle as they recycle. Reviews display inline; only the 🔗 badges link to
+Google originals. Reduced-motion preferences enable manual scrolling.
+
+Email capture is not connected yet.
+
+Pricing uses one shared sliding-scale panel with one booking link. Related work
+is linked from the homepage’s `#projects` section and has three dedicated pages.
+
+## Editorial images
+
+`assets/images/` contains four generated editorial illustrations, encoded as
+JPEGs for the website: massage, gardening, conversation, and advisory. They are illustrative
+artwork, not photographs of Mars, clients, or actual project locations. Used in
+the homepage hero, experience section, project cards, and dedicated page heroes.
+
+## Your own photo gallery
+
+`gallery.html` is the personal photo gallery, separate from Google review screenshots.
+It uses natural image proportions, captions, keyboard navigation and a swipeable
+full-size viewer. No generated artwork is added to this gallery.
+
+Import a folder of your own JPEG, PNG, WebP or AVIF photos:
+
+```
+python3 tools/build_gallery.py --source /path/to/your/photos
+```
+
+Requires Pillow. Originals stay untouched. The importer creates web JPEGs without
+EXIF/GPS metadata and generates `gallery/photos.js`. Optional `gallery/captions.json`
+maps original filenames to `caption` and `alt` values. Filename order controls display
+order. The first imported photo becomes the homepage hero; the first six appear in
+the homepage gallery preview. Until photos are supplied, that preview stays hidden
+and the dedicated gallery shows an empty state. No upload backend is required.
